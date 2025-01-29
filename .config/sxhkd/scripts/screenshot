@@ -1,0 +1,28 @@
+#!/bin/sh
+
+time="$(date +%Y%m%d-%H%M%S)"
+dir="$HOME/Pictures/Screenshots"
+name="$dir/img-$time.png"
+
+clipboard(){
+  xclip -selection clipboard -t image/png -i "$name"
+}
+
+screenshot(){
+  case $1 in
+    --now)
+      maim -u "$name"
+      clipboard
+      ;;
+    --sel)
+      maim -su "$name"
+      clipboard
+      ;;
+    --active)
+      maim -ui $(xdotool getactivewindow) "$name"
+      clipboard
+      ;;
+  esac
+}
+
+screenshot $1
