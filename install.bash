@@ -1,7 +1,6 @@
 #!/bin/bash
 #instalar dependencias
-yay -Syu bspwm sxhkd feh lightdm lightdm-gtk-greetera picom kitty spotify firefox brave youtube-music-bin vscode dolphin rofi polybar
-
+yay -Syu bspwm sxhkd feh lightdm lightdm-gtk-greeter picom kitty spotify firefox brave youtube-music-bin vscode dolphin rofi polybar nvim
 systemctl enable lightdm.service
 
 mv ./Templates/* ~/Templates/
